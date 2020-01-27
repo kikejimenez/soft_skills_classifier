@@ -1,0 +1,14 @@
+ 
+# Byte-compiled / optimized / DLL files
+**/__pycache__
+**/__init__.py
+**/__main__.py
+**/*.py[cod]
+**/*$py.class
+# data files
+data/
+.vscode
+Dockerfile
+docker-compose.yml
+**/.ipynb_checkpoints
+**/notebooks
