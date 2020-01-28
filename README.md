@@ -99,9 +99,9 @@ Job ID:  R1105482
 ###############  Soft Skills  ############
 
 Demonstrate ability to learn new systems and function in an evolving technical environment.
-Language Skills
 Competent in written and oral English.
 Excellent communication skills.
+Ability to negotiate timelines and meet timelines.
 ```
 ## Train your own model
 To train your model first change  `train.sh`  file to an executable mode (with ``chmod`` command) and specify the training  set, the test set and the model files in `train.sh`:
