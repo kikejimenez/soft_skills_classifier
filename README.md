@@ -19,10 +19,10 @@ python src/reports/soft_skills.py <name of the txt file>
 ## Results from our model 
 We have trained and evaluated our model with a thousand of sentences (with train/test split 70/30) generated from backend developer job descriptions. The evaluation of the resulting model gives:
 ```
-{'accuracy': 0.9641255605381166,  
- 'precision': 0.9601418291792678,  
-  'recall': 0.9641255605381166,  
-  'fscore': 0.9607065411903407}
+{'accuracy': 0.9220183486238532,
+'precision': 0.9144912243960984,
+'recall': 0.9220183486238532,
+ 'fscore': 0.9160523550421894}
 ```
 ## Example
  The command `python reports/predict.py example1.txt` outputs:
