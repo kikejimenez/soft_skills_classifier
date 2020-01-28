@@ -32,6 +32,21 @@ class SoftSkills:
                     dst_f.write('\n')
 
     @staticmethod
+    def select_positives(src_jsonl, dst_jsonl):
+        '''
+        '''
+        with open(src_jsonl) as src_f, open(dst_jsonl, 'w+') as dst_f:
+            for line in src_f:
+                dic = json.loads(line.strip())
+                text = dic['text']
+
+                if dic['annotations'] and any(
+                    [ann['label'] == 12 for ann in dic['annotations']]
+                ):
+                    dst_f.write(json.dumps({'text': text, 'soft skill': 'yes'}))
+                    dst_f.write('\n')
+
+    @staticmethod
     def load(jsonl):
         '''
         '''
@@ -69,9 +84,14 @@ if __name__ == "__main__":
     ).parent
 
     DST_FILE = os.path.join(
-        PARENT_DIR, 'data/proc', 'doccano_job_description.json'
+        PARENT_DIR, 'data/interim/back_end_developer',
+        'positive_sentences_1_from_0_to_1001.jsonl'
     )
-    SRC_FILE = os.path.join(PARENT_DIR, 'data/proc', 'dataset_binary.json')
+    SRC_FILE = os.path.join(
+        PARENT_DIR, 'data/interim/back_end_developer',
+        'annotated_back_end_sentences_1_from_0_to_1001.jsonl'
+    )
 
     sk = SoftSkills()
-    sk.gen(DST_FILE, SRC_FILE)
+    #sk.gen(DST_FILE, SRC_FILE)
+    sk.select_positives(src_jsonl=SRC_FILE, dst_jsonl=DST_FILE)
